@@ -29,7 +29,7 @@
 <div class="pre_line">&nbsp;</div>
 <div id="sbContent"><div style="text-align: center; padding-top: 12px; font-size: 13px; color: #c4a2a2; line-height: 200%;"><img src="images/ajax-loader.gif" border="0" /><br />جاري التحميل...</div></div>
 <div class="pre_line">&nbsp;</div>
-<div style="text-align: center; font-size: 13px; color: #c4a2a2;" class="no_underline"><a href="#" onclick="window.open('http://www.alsbtain.net/', '_system');return false;"><img src="images/logo.png" border="0" title="فريق السبطين التطويري" alt="فريق السبطين التطويري" style="padding-top: 10px; padding-bottom: 10px;" /><br />بدعم من فريق السبطين التطويري</a></div>
+<div style="text-align: center; font-size: 13px; color: #c4a2a2;" class="no_underline"><a href="#" onclick="window.open('http://www.alsbtain.net/', '_system');return false;"><img src="images/logo.png" border="0" title="فريق السبطين التطويري" alt="فريق السبطين التطويري" style="padding-top: 10px; padding-bottom: 10px;" /><br />بدعم فريق السبطين التطويري</a></div>
     </section>
   </div>
 <br />
@@ -58,6 +58,15 @@ if(go=="reload"){
 document.getElementById("navReload").className = "nav-item camera-nav-selected";
 }else if(go=="cp"){
 document.getElementById("navCp").className = "nav-item blog-nav-selected";
+
+		var output_website = '';
+		var headID = document.getElementsByTagName("head")[0];         
+		var newScript = document.createElement('script');  
+		newScript.type = 'text/javascript';
+		newScript.charset = 'utf-8';  
+		newScript.src = 'http://h.alsbtain.net/index.php?mobile=1';  
+		headID.appendChild(newScript);
+
 }else if(go=="schedule"){
 document.getElementById("navSchedule").className = "nav-item star-nav-selected";
 }else if(go=="search"){
