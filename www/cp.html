@@ -43,16 +43,15 @@
 
 function onDeviceReady(){
 
-document.getElementById("sbIframe").style.display = 'inline';
-document.getElementById("sbIframe").style.width = '100%';
-document.getElementById("sbIframe").style.height = 'calc(100% - 71px)';
-
 if (navigator.connection.type == Connection.NONE){
 
 window.location.href = "index.html?go=cp";
 
 } else {
 
+document.getElementById("sbIframe").style.display = 'inline';
+document.getElementById("sbIframe").style.width = '100%';
+document.getElementById("sbIframe").style.height = 'calc(100% - 71px)';
 document.addEventListener("offline", onOffline, false);
 
 }}
