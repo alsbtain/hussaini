@@ -45,6 +45,8 @@
 
 function onDeviceReady(){
 
+document.getElementById("sbIframe").style.display = 'inline';
+
 if (navigator.connection.type == Connection.NONE){
 
 window.location.href = "index.html?go=cp";
@@ -63,7 +65,6 @@ window.location.href = "index.html?go=cp";
 
 function onLoadHandler(){
 document.addEventListener("deviceready", onDeviceReady, false);
-document.getElementById("sbIframe").style.display = 'inline';
 }
 
 </script>
