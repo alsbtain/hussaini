@@ -12,8 +12,6 @@
 </head>
 
 <body>
-
-<body>
   <div class="container" id="container">
     <section class="register">
       <h1 id="sbTitle">برنامج حُسيني</h1>
@@ -28,7 +26,7 @@
 
 <div style="padding-top: 70px;"></div>
 
-<iframe id="sbIframe" src="http://h.alsbtain.net/cp.php" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width: 100%; height: calc(100% - 71px); border:none; margin:0; padding:0; overflow:hidden; z-index:999999; display: hidden;" onload="onLoadHandler();">
+<iframe id="sbIframe" src="http://h.alsbtain.net/cp.php" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width: 0; height: calc(100% - 71px); border:none; margin:0; padding:0; overflow:hidden; z-index:999999; display: hidden;" onload="onLoadHandler();">
 </iframe>`
 
 <div class="navigation">
@@ -46,6 +44,7 @@
 function onDeviceReady(){
 
 document.getElementById("sbIframe").style.display = 'inline';
+document.getElementById("sbIframe").style.width = '100%';
 
 if (navigator.connection.type == Connection.NONE){
 
