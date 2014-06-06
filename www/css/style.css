@@ -350,6 +350,12 @@ th:only-child{
   cursor: pointer;
 }
 
+.notIncluded{
+  border: none !important;
+  cursor: auto;
+  background-color: #f7f7f7;
+}
+
 /* Navigation */
 .navigation{
 	position:fixed;
