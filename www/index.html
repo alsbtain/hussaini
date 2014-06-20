@@ -67,21 +67,19 @@ document.getElementById("navSearch").className = "nav-item contact-nav-selected"
 document.getElementById("navHome").className = "nav-item home-nav-selected";
 }
 
+
+if(go != "cp"){
 document.addEventListener("backbutton", function(e)
 {
-	if(go=="cp")
+e.preventDefault();
+	if (go=="reload" || go=="schedule" || go=="search")
 	{
-		navigator.app.backHistory();
-	}
-	else if (go=="reload" || go=="schedule" || go=="search")
-	{
-		e.preventDefault();
 		window.location.href = "index.html";
 	} else {
-		e.preventDefault();
 		navigator.app.exitApp();
 	}
 }, false);
+}
 
 if (navigator.connection.type == Connection.NONE){
 
