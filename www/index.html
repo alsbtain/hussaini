@@ -67,6 +67,19 @@ document.getElementById("navSearch").className = "nav-item contact-nav-selected"
 document.getElementById("navHome").className = "nav-item home-nav-selected";
 }
 
+document.addEventListener("backbutton", function(e)
+{
+e.preventDefault();
+	if(go=="reload" || go=="cp" || go=="schedule" || go=="search")
+	{
+		window.location.href = "index.html";
+	}
+	else
+	{
+		navigator.app.exitApp();
+	}
+}, false);
+
 if (navigator.connection.type == Connection.NONE){
 
 document.getElementById('sbContent').innerHTML = '<div style="text-align: center; padding-top: 12px; font-size: 13px; color: #c4a2a2; line-height: 200%;"><img src="images/wifi.png" border="0" /><br />هذا البرنامج يتطلب اتصالاً بالإنترنت..<br />قم بالاتصال بالإنترنت ومن ثم افتح البرنامج...</div>';
