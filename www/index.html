@@ -67,19 +67,16 @@ document.getElementById("navSearch").className = "nav-item contact-nav-selected"
 document.getElementById("navHome").className = "nav-item home-nav-selected";
 }
 
-
-if(go != "cp"){
 document.addEventListener("backbutton", function(e)
 {
 e.preventDefault();
-	if (go=="reload" || go=="schedule" || go=="search")
+	if (go=="reload" || go=="schedule" || go=="search" || go=="cp")
 	{
 		window.location.href = "index.html";
 	} else {
 		navigator.app.exitApp();
 	}
 }, false);
-}
 
 if (navigator.connection.type == Connection.NONE){
 
