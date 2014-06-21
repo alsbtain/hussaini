@@ -432,9 +432,9 @@ th:only-child{
 }
 
 .camera-nav{
-	background-image:url(../images/nav_camera.png);
+	background-image:url(../images/nav_contact.png);
 }
 
 .camera-nav-selected{
-	background-image:url(../images/nav_cameras.png);
+	background-image:url(../images/nav_contacts.png);
 }
