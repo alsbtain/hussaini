@@ -50,7 +50,8 @@
 <script>
 window.onresize = function(event) { document.getElementById("container").style.width = window.innerWidth-32 + "px"; }
 
-function myBackButton(){
+function myBackButton(event){
+event.preventDefault();
 	if (go=="reload" || go=="schedule" || go=="search" || go=="cp")
 	{
 		window.location.href = "index.html";
