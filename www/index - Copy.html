@@ -40,7 +40,7 @@
 <div class="navigation">
    	<div class="navigation-wrapper">
         <a href="index.html?go=reload" class="nav-item camera-nav" id="navReload"></a>
-        <a href="cp.html" class="nav-item blog-nav" id="navCp"></a>
+        <a href="javascript: goToCP();" class="nav-item blog-nav" id="navCp"></a>
 		<a href="index.html" class="nav-item home-nav" id="navHome"></a>
 		<a href="index.html?go=schedule" class="nav-item star-nav" id="navSchedule"></a>
 		<a href="index.html?go=search" class="nav-item contact-nav" id="navSearch"></a>
@@ -49,6 +49,21 @@
 
 <script>
 window.onresize = function(event) { document.getElementById("container").style.width = window.innerWidth-32 + "px"; }
+
+function myBackButton(event){
+event.preventDefault();
+	if (go=="reload" || go=="schedule" || go=="search" || go=="cp")
+	{
+		window.location.href = "index.html";
+	} else {
+		navigator.app.exitApp();
+	}
+}
+
+function goToCP(){
+	document.removeEventListener("backbutton", myBackButton, false);
+	window.location.href = "cp.html";
+}
 
 function onDeviceReady(){
 
@@ -66,6 +81,8 @@ document.getElementById("navSearch").className = "nav-item contact-nav-selected"
 }else{
 document.getElementById("navHome").className = "nav-item home-nav-selected";
 }
+
+document.addEventListener("backbutton", myBackButton, false);
 
 if (navigator.connection.type == Connection.NONE){
 
