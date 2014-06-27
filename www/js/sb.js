@@ -32,3 +32,13 @@ function labelThis(id,day){
 		document.getElementById('label' + id).src='images/label_32.png';
 	}
 }
+
+function twoDigits(name){
+var toReturn='';
+if(name.length==1){
+toReturn='0' + name;
+}else{
+toReturn = name;
+}
+return toReturn;
+}
