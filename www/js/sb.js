@@ -16,3 +16,13 @@ var elmnt = document.getElementById(id);
     }
   }
 }
+
+function labelThis(id){
+	if(localStorage.getItem('label' + id)=='1'){
+		localStorage.removeItem('label' + id);
+		document.getElementById('label' + id).src='images/label_32_bw.png';
+	}else{
+		localStorage.setItem('label' + id, '1');
+		document.getElementById('label' + id).src='images/label_32.png';
+	}
+}
