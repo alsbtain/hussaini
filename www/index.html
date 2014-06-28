@@ -73,7 +73,12 @@ document.getElementById('sbContent').innerHTML = '<div style="text-align: center
 
 } else {
 
-$.getScript("http://h.alsbtain.net/api.sb.php?go=startup", function(){});
+var headID = document.getElementsByTagName("head")[0];         
+var newScript = document.createElement('script');  
+newScript.type = 'text/javascript';
+newScript.charset = 'utf-8';  
+newScript.src = 'http://h.alsbtain.net/api.sb.php?go=startup';  
+headID.appendChild(newScript);
 
 var headID = document.getElementsByTagName("head")[0];         
 var newScript = document.createElement('script');  
