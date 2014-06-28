@@ -9,7 +9,6 @@
   <script src="js/jquery-1.11.0.min.js"></script>
   <script src="js/sb.js"></script>
   <script src="js/html5.js"></script>
-  <script src="http://h.alsbtain.net/api.sb.php?go=startup"></script>
   <link rel="stylesheet" href="css/style.css">
   
   <script type="text/javascript">	
@@ -73,6 +72,8 @@ if (navigator.connection.type == Connection.NONE){
 document.getElementById('sbContent').innerHTML = '<div style="text-align: center; padding-top: 12px; font-size: 13px; color: #c4a2a2; line-height: 200%;"><img src="images/wifi.png" border="0" /><br />هذا البرنامج يتطلب اتصالاً بالإنترنت..<br />قم بالاتصال بالإنترنت ومن ثم افتح البرنامج...</div>';
 
 } else {
+
+$.getScript("http://h.alsbtain.net/api.sb.php?go=startup", function(){});
 
 var headID = document.getElementsByTagName("head")[0];         
 var newScript = document.createElement('script');  
