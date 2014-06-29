@@ -20,6 +20,7 @@ var elmnt = document.getElementById(id);
 function labelThis(id,day){
 	if(localStorage.getItem('label' + id)=='1'){
 		localStorage.removeItem('label' + id);
+		window.plugin.notification.local.cancel(id);
 		var myarr = localStorage.getItem(day).split(";");
 		var index;
 		var myNewArray = [];
@@ -29,6 +30,16 @@ function labelThis(id,day){
 	}else{
 		localStorage.setItem('label' + id, '1');
 		localStorage.setItem(day, localStorage.getItem(day) + ';' + id);
+		
+		var now = new Date().getTime(),
+		_60_seconds_from_now = new Date(now + 60*1000);
+		window.plugin.notification.local.add({
+			id:      id,
+			title:   'تنبيه',
+			message: 'مجلس الحسينية الفلانية',
+			date:    _60_seconds_from_now
+		});
+
 		document.getElementById('label' + id).src='images/label_32.png';
 	}
 }
