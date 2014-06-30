@@ -17,7 +17,7 @@ var elmnt = document.getElementById(id);
   }
 }
 
-now = new Date().getTime();
+var now = new Date().getTime();
 
 function labelThis(id,day,huName,time,timestamp){
 	if(localStorage.getItem('label' + id)=='1'){
@@ -33,7 +33,7 @@ function labelThis(id,day,huName,time,timestamp){
 		localStorage.setItem('label' + id, '1');
 		localStorage.setItem(day, localStorage.getItem(day) + ';' + id);
 		
-		var delta = new Date(now + (timestamp-currentTimestamp) - 30*60*1000);
+		var delta = new Date(now + (timestamp-currentTimestamp)*1000 - 30*60*1000);
 		window.plugin.notification.local.add({
 			id:      id,
 			title:   'تنبيه',
