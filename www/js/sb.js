@@ -34,12 +34,14 @@ function labelThis(id,day,huName,time,timestamp){
 		localStorage.setItem(day, localStorage.getItem(day) + ';' + id);
 		
 		var delta = new Date(now + (timestamp-currentTimestamp)*1000 - 30*60*1000);
-		window.plugin.notification.local.add({
-			id:      id,
-			title:   'تنبيه',
-			message: huName + ': ' + time,
-			date:    delta
-		});
+		if(delta > now){
+			window.plugin.notification.local.add({
+				id:      id,
+				title:   'تنبيه',
+				message: huName + ': ' + time,
+				date:    delta
+			});
+		}
 
 		document.getElementById('label' + id).src='images/label_32.png';
 	}
