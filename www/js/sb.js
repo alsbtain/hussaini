@@ -37,7 +37,7 @@ function labelThis(id,day,huName,time,timestamp){
 		if(delta > now){
 			window.plugin.notification.local.add({
 				id:      id,
-				title:   'تنبيه',
+				title:   'تنبيه مناسبة',
 				message: huName + ': ' + time,
 				date:    delta
 			});
