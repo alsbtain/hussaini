@@ -57,6 +57,8 @@ newScript.charset = 'utf-8';
 var go=getUrlVars()["go"];
 if(go=="reload"){
 newScript.src = 'http://h.alsbtain.net/api.sb.php?go=' + getUrlVars()["go"] + '&id=' + getUrlVars()["id"] + '&email=' + getUrlVars()["email"] + '&phone=' + getUrlVars()["phone"] + '&name=' + getUrlVars()["name"] + '&title=' + getUrlVars()["title"] + '&content=' + getUrlVars()["content"];  
+} else if(go=="search"){
+newScript.src = 'http://h.alsbtain.net/api.sb.php?go=' + getUrlVars()["go"] + '&id=' + getUrlVars()["id"] + '&name=' + getUrlVars()["name"];  
 } else if(go=="schedule"){
 if(getUrlVars()["day"]>0 && getUrlVars()["month"]>0 && getUrlVars()["year"]>0){
 newScript.src = 'http://h.alsbtain.net/api.sb.php?go=' + getUrlVars()["go"] + '&day=' + getUrlVars()["day"] + '&month=' + getUrlVars()["month"] + '&year=' + getUrlVars()["year"] + '&label=' + localStorage.getItem(twoDigits(getUrlVars()["day"]) + twoDigits(getUrlVars()["month"]) + getUrlVars()["year"]);
