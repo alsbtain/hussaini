@@ -49,13 +49,10 @@ function labelThis(id,day,huName,time,timestamp){
 
 function onSbReady(){
 
-alert(getUrlVars()["go"]);
-
-/* var headID = document.getElementsByTagName("head")[0];         
+var headID = document.getElementsByTagName("head")[0];         
 var newScript = document.createElement('script');  
 newScript.type = 'text/javascript';
 newScript.charset = 'utf-8';  
-//newScript.src = 'http://h.alsbtain.net/api.sb.php?go=startupo';
 
 if(go=="reload"){
 newScript.src = 'http://h.alsbtain.net/api.sb.php?go=' + getUrlVars()["go"] + '&id=' + getUrlVars()["id"] + '&email=' + getUrlVars()["email"] + '&phone=' + getUrlVars()["phone"] + '&name=' + getUrlVars()["name"] + '&title=' + getUrlVars()["title"] + '&content=' + getUrlVars()["content"];  
@@ -67,7 +64,7 @@ newScript.src = 'http://h.alsbtain.net/api.sb.php?go=' + getUrlVars()["go"] + '&
 }} else {
 newScript.src = 'http://h.alsbtain.net/api.sb.php?go=' + getUrlVars()["go"] + '&id=' + getUrlVars()["id"] + '&day=' + getUrlVars()["day"] + '&month=' + getUrlVars()["month"] + '&year=' + getUrlVars()["year"] + '&city=' + localStorage.getItem('city') + '&place=' + localStorage.getItem('place');  
 }
-headID.appendChild(newScript); */
+headID.appendChild(newScript);
 
 }
 
