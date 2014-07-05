@@ -64,6 +64,9 @@ newScript.src = 'http://h.alsbtain.net/api.sb.php?go=' + getUrlVars()["go"] + '&
 }} else {
 newScript.src = 'http://h.alsbtain.net/api.sb.php?go=' + getUrlVars()["go"] + '&id=' + getUrlVars()["id"] + '&day=' + getUrlVars()["day"] + '&month=' + getUrlVars()["month"] + '&year=' + getUrlVars()["year"] + '&city=' + localStorage.getItem('city') + '&place=' + localStorage.getItem('place');  
 }
+
+alert(newScript.src);
+
 headID.appendChild(newScript);
 
 }
