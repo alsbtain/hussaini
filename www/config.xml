@@ -34,7 +34,6 @@
     <gap:plugin name="org.apache.cordova.inappbrowser" />
 	<gap:plugin name="org.apache.cordova.splashscreen" />
 	<gap:plugin name="org.apache.cordova.device" />
-	<gap:plugin name="com.phonegap.plugins.childbrowser" version="5.0.0" />
 
 	<gap:plugin name="nl.x-services.plugins.socialsharing" />
 	<gap:plugin name="de.appplant.cordova.plugin.local-notification" />
