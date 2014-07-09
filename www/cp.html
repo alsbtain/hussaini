@@ -44,7 +44,7 @@ window.onresize = function(event) {
 document.getElementById("container").style.width = window.innerWidth-32 + "px";
 }
 
-function onDeviceReady(){
+function sbReady(){
 
 if (navigator.connection.type == Connection.NONE){
 
@@ -62,7 +62,7 @@ function onOffline() {
 window.location.href = "index.html?go=cp";
 }
 
-document.addEventListener("deviceready", onDeviceReady, true);
+sbReady();
 
 </script>
 
