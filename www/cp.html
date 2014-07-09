@@ -35,7 +35,7 @@
 		<a onclick="location.href='index.html?go=search';" href="#" class="nav-item contact-nav" id="navSearch"></a>
     </div>
 </div>
-<div id="sbIframeDiv" style="position: fixed; top:0; left:0; right:0; bottom:0; display:hidden; width: 100%; height: 100%; margin:0; padding:0; z-index: 10; overflow:scroll !important; -webkit-overflow-scrolling:touch !important;"><iframe src="http://h.alsbtain.net/cp.php" style="border: 0; width:100%; height:100%; margin:0; padding:0;" onload="sbOnLoad();"></div>
+<div id="sbIframeDiv" style="position: fixed; top:0; left:0; right:0; bottom:0; display:hidden; width: 100%; height: 100%; margin:0; padding:0; z-index: 10; overflow:scroll !important; -webkit-overflow-scrolling:touch !important;"><iframe src="http://h.alsbtain.net/cp.php" style="border: 0; width:100%; height:100%; margin:0; padding:0;"></div>
 
 <script>
 document.getElementById("container").style.width = window.innerWidth-32 + "px";
@@ -64,10 +64,7 @@ function onOffline() {
 window.location.href = "index.html?go=cp";
 }
 
-function sbOnLoad(){ 
 document.addEventListener("deviceready", onDeviceReady, false);
-//onDeviceReady();
-}
 
 </script>
 
