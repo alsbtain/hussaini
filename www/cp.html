@@ -54,6 +54,7 @@ window.location.href = "index.html?go=cp";
 
 } else {
 
+document.getElementById("container").innerHTML = '';
 document.getElementById("sbIframeDiv").style.display = 'inline';
 document.addEventListener("offline", onOffline, false);
 
@@ -63,7 +64,8 @@ function onOffline() {
 window.location.href = "index.html?go=cp";
 }
 
-document.addEventListener("deviceready", onDeviceReady, false);
+//document.addEventListener("deviceready", onDeviceReady, false);
+onDeviceReady();
 
 </script>
 
