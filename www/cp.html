@@ -26,7 +26,7 @@
 
 <div style="padding-top: 70px;"></div>
 
-<iframe id="sbIframe" src="http://h.alsbtain.net/cp.php" style="border: 0; position: absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%; margin:0; padding:0;  display:hidden;">
+<iframe id="sbIframe" src="http://h.alsbtain.net/cp.php" style="border: 0; position: absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%; margin:0; padding:0;  display:hidden; z-index: 10;">
 
 <div class="navigation" style="z-index: 999999;">
    	<div class="navigation-wrapper">
@@ -44,25 +44,28 @@ window.onresize = function(event) { document.getElementById("container").style.w
 
 function onDeviceReady(){
 
-if (navigator.connection.type == Connection.NONE){
+/* if (navigator.connection.type == Connection.NONE){
 
 window.location.href = "index.html?go=cp";
 
-} else {
+} else { */
 
 document.getElementById("sbIframe").style.display = 'inline';
 document.getElementById("sbIframe").style.width = '100%';
 document.getElementById("sbIframe").style.height = '100%'; 
 
-document.addEventListener("offline", onOffline, false);
-
-}}
+//document.addEventListener("offline", onOffline, false);
+//}
+}
 
 function onOffline() {
 window.location.href = "index.html?go=cp";
 }
 
-window.onload=function(){ document.addEventListener("deviceready", onDeviceReady, false); }
+window.onload=function(){ 
+//document.addEventListener("deviceready", onDeviceReady, false);
+onDeviceReady();
+}
 
 </script>
 

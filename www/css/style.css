@@ -358,7 +358,7 @@ th:only-child{
 
 /* Navigation */
 .navigation{
-	position:fixed;
+	position:absolute;
 	background-color:#FFFFFF;
 	height:70px;
 	width:100%;
