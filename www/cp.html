@@ -28,11 +28,11 @@
 
 <div class="navigation" style="z-index: 100;">
    	<div class="navigation-wrapper">
-        <a href="index.html?go=reload" class="nav-item camera-nav" id="navReload"></a>
-        <a href="cp.html" class="nav-item blog-nav-selected" id="navCp"></a>
-		<a href="index.html" class="nav-item home-nav" id="navHome"></a>
-		<a href="index.html?go=schedule" class="nav-item star-nav" id="navSchedule"></a>
-		<a href="index.html?go=search" class="nav-item contact-nav" id="navSearch"></a>
+        <a onclick="location.href='index.html?go=reload';" href="#" class="nav-item camera-nav" id="navReload"></a>
+        <a onclick="location.href='cp.html';" href="#" class="nav-item blog-nav-selected" id="navCp"></a>
+		<a onclick="location.href='index.html';" href="#" class="nav-item home-nav" id="navHome"></a>
+		<a onclick="location.href='index.html?go=schedule';" href="#" class="nav-item star-nav" id="navSchedule"></a>
+		<a onclick="location.href='index.html?go=search';" href="#" class="nav-item contact-nav" id="navSearch"></a>
     </div>
 </div>
 <div id="sbIframeDiv" style="position: fixed; top:0; left:0; right:0; bottom:0; display:hidden; width: 100%; height: 100%; margin:0; padding:0; z-index: 10; overflow:scroll !important; -webkit-overflow-scrolling:touch !important;"><iframe src="http://h.alsbtain.net/cp.php" style="border: 0; width:100%; height:100%; margin:0; padding:0;"></div>
@@ -53,10 +53,11 @@ window.location.href = "index.html?go=cp";
 } else {
 
 document.getElementById("container").innerHTML='';
-setTimeout(function(){document.getElementById("sbIframeDiv").style.display = 'inline';},1);
+setTimeout(function(){document.getElementById("sbIframeDiv").style.display = 'inline';},1000);
 
 document.addEventListener("offline", onOffline, false);
-}}
+}
+}
 
 function onOffline() {
 window.location.href = "index.html?go=cp";
@@ -64,6 +65,7 @@ window.location.href = "index.html?go=cp";
 
 window.onload=function(){ 
 document.addEventListener("deviceready", onDeviceReady, false);
+//onDeviceReady();
 }
 
 </script>
