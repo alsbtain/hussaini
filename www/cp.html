@@ -26,9 +26,7 @@
 
 <div style="padding-top: 70px;"></div>
 
-<iframe id="sbIframe" src="http://h.alsbtain.net/cp.php" style="border: 0; position: absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%; margin:0; padding:0;  display:hidden; z-index: 10;">
-
-<div class="navigation" style="z-index: 999999;">
+<div class="navigation" style="z-index: 100;">
    	<div class="navigation-wrapper">
         <a href="index.html?go=reload" class="nav-item camera-nav" id="navReload"></a>
         <a href="cp.html" class="nav-item blog-nav-selected" id="navCp"></a>
@@ -37,34 +35,34 @@
 		<a href="index.html?go=search" class="nav-item contact-nav" id="navSearch"></a>
     </div>
 </div>
+<div id="sbIframeDiv" style="position: fixed; top:0; left:0; right:0; bottom:0; display:hidden; width: 100%; height: 100%; margin:0; padding:0; z-index: 10;"><iframe src="http://h.alsbtain.net/cp.php" style="border: 0; width:100%; height:100%; margin:0; padding:0;"></div>
 
 <script>
 document.getElementById("container").style.width = window.innerWidth-32 + "px";
-window.onresize = function(event) { document.getElementById("container").style.width = window.innerWidth-32 + "px"; }
+
+window.onresize = function(event) {
+document.getElementById("container").style.width = window.innerWidth-32 + "px";
+}
 
 function onDeviceReady(){
 
-/* if (navigator.connection.type == Connection.NONE){
+if (navigator.connection.type == Connection.NONE){
 
 window.location.href = "index.html?go=cp";
 
-} else { */
+} else {
 
-document.getElementById("sbIframe").style.display = 'inline';
-document.getElementById("sbIframe").style.width = '100%';
-document.getElementById("sbIframe").style.height = '100%'; 
+document.getElementById("sbIframeDiv").style.display = 'inline';
 
-//document.addEventListener("offline", onOffline, false);
-//}
-}
+document.addEventListener("offline", onOffline, false);
+}}
 
 function onOffline() {
 window.location.href = "index.html?go=cp";
 }
 
 window.onload=function(){ 
-//document.addEventListener("deviceready", onDeviceReady, false);
-onDeviceReady();
+document.addEventListener("deviceready", onDeviceReady, false);
 }
 
 </script>
