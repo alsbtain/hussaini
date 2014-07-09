@@ -52,8 +52,9 @@ window.location.href = "index.html?go=cp";
 
 } else {
 
+alert(document.getElementById("container").innerHTML);
 document.getElementById("container").innerHTML='';
-setTimeout(function(){document.getElementById("sbIframeDiv").style.display = 'inline';},1000);
+document.getElementById("sbIframeDiv").style.display = 'inline';
 
 document.addEventListener("offline", onOffline, false);
 }
