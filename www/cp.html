@@ -53,7 +53,7 @@ window.location.href = "index.html?go=cp";
 } else {
 
 document.getElementById("container").innerHTML='';
-document.getElementById("sbIframeDiv").style.display = 'inline';
+setTimeout(function(){document.getElementById("sbIframeDiv").style.display = 'inline';},1);
 
 document.addEventListener("offline", onOffline, false);
 }}
