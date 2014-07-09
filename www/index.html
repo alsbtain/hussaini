@@ -48,8 +48,6 @@
 </div>
 
 <script>
-alert(location.href);
-
 document.getElementById("container").style.width = window.innerWidth-32 + "px";
 window.onresize = function(event) { document.getElementById("container").style.width = window.innerWidth-32 + "px"; }
 
@@ -83,8 +81,7 @@ headID2.appendChild(newScript2);
 
 }}
 
-//document.addEventListener("deviceready", onDeviceReady, false);
-onDeviceReady();
+document.addEventListener("deviceready", onDeviceReady, true);
 
 </script>
 
