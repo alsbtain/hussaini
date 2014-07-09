@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body style="overflow: hidden;">
+<body style="overflow: hidden;" onload="sbReady();">
   <div class="container" id="container">
     <section class="register">
       <h1 id="sbTitle">برنامج حُسيني</h1>
@@ -54,15 +54,8 @@ window.location.href = "sb.html?go=cp";
 
 document.getElementById("container").innerHTML = '';
 document.getElementById("sbIframeDiv").style.display = 'inline';
-document.addEventListener("offline", onOffline, false);
 
 }}
-
-function onOffline() {
-window.location.href = "sb.html?go=cp";
-}
-
-sbReady();
 
 </script>
 
