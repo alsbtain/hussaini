@@ -40,7 +40,7 @@
 <div class="navigation">
    	<div class="navigation-wrapper">
         <a href="sb.html?go=reload" class="nav-item camera-nav" id="navReload"></a>
-        <a href="cp.html?go=cp" class="nav-item blog-nav" id="navCp"></a>
+        <a href="sb.html?go=cp" class="nav-item blog-nav" id="navCp"></a>
 		<a href="sb.html" class="nav-item home-nav" id="navHome"></a>
 		<a href="sb.html?go=schedule" class="nav-item star-nav" id="navSchedule"></a>
 		<a href="sb.html?go=search" class="nav-item contact-nav" id="navSearch"></a>
@@ -72,11 +72,11 @@ document.getElementById('sbContent').innerHTML = '<div style="text-align: center
 
 } else {
 
-var headID2 = document.getElementsByTagName("head")[0];         
-var newScript2 = document.createElement('script');  
+var headID2 = document.getElementsByTagName("head")[0];
+var newScript2 = document.createElement('script');
 newScript2.type = 'text/javascript';
-newScript2.charset = 'utf-8';  
-newScript2.src = 'http://h.alsbtain.net/api.sb.php?go=startup';  
+newScript2.charset = 'utf-8';
+newScript2.src = 'http://h.alsbtain.net/api.sb.php?go=startup';
 headID2.appendChild(newScript2);
 
 }}
