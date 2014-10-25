@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" style="direction: rtl; overflow: hidden;">
+<html lang="ar" style="direction: rtl;">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -7,11 +7,22 @@
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" /> 
   <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
   <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/sb.js"></script>
   <script src="js/html5.js"></script>
   <link rel="stylesheet" href="css/style.css">
+  
+  <script type="text/javascript">	
+	function getUrlVars(){
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+			vars[key] = value;
+		});
+		return vars;
+	}
+  </script>
 </head>
 
-<body style="overflow: hidden;" onload="sbReady();">
+<body onload="hReady();">
   <div class="container" id="container">
     <section class="register">
       <h1 id="sbTitle">برنامج حُسيني</h1>
@@ -26,36 +37,51 @@
 
 <div style="padding-top: 70px;"></div>
 
-<div class="navigation" style="z-index: 100;">
+<div class="navigation">
    	<div class="navigation-wrapper">
-        <a onclick="location.href='sb.html?go=reload';" href="#" class="nav-item camera-nav" id="navReload"></a>
-        <a onclick="location.href='cp.html';" href="#" class="nav-item blog-nav-selected" id="navCp"></a>
-		<a onclick="location.href='sb.html';" href="#" class="nav-item home-nav" id="navHome"></a>
-		<a onclick="location.href='sb.html?go=schedule';" href="#" class="nav-item star-nav" id="navSchedule"></a>
-		<a onclick="location.href='sb.html?go=search';" href="#" class="nav-item contact-nav" id="navSearch"></a>
+        <a href="sb.html?go=reload" class="nav-item camera-nav" id="navReload"></a>
+        <a href="cp.html" class="nav-item blog-nav" id="navCp"></a>
+		<a href="sb.html" class="nav-item home-nav" id="navHome"></a>
+		<a href="sb.html?go=schedule" class="nav-item star-nav" id="navSchedule"></a>
+		<a href="sb.html?go=search" class="nav-item contact-nav" id="navSearch"></a>
     </div>
 </div>
-<div id="sbIframeDiv" style="position: absolute; top:0; left:0; right:0; bottom:0; display: hidden; width: 100%; height: 100%; margin:0; padding:0; z-index: 10; overflow:scroll !important; -webkit-overflow-scrolling:touch !important;"><iframe src="http://h.alsbtain.net/cp.php?isMobile=1" style="border: 0; width:100%; height:100%; margin:0; padding:0;"></div>
 
 <script>
 document.getElementById("container").style.width = window.innerWidth-32 + "px";
+window.onresize = function(event) { document.getElementById("container").style.width = window.innerWidth-32 + "px"; }
 
-window.onresize = function(event) {
-document.getElementById("container").style.width = window.innerWidth-32 + "px";
+function hReady(){
+
+var go=getUrlVars()["go"];
+if(go=="reload"){
+document.getElementById("navReload").className = "nav-item camera-nav-selected";
+}else if(go=="cp"){
+document.getElementById("navCp").className = "nav-item blog-nav-selected";
+}else if(go=="schedule"){
+document.getElementById("navSchedule").className = "nav-item star-nav-selected";
+}else if(go=="search"){
+document.getElementById("navSearch").className = "nav-item contact-nav-selected";
+}else if(go=="huinfo" || go=="spinfo"){}else{
+document.getElementById("navHome").className = "nav-item home-nav-selected";
 }
-
-function sbReady(){
 
 if (navigator.connection.type == Connection.NONE){
 
-window.location.href = "sb.html?go=cp";
+document.getElementById('sbContent').innerHTML = '<div style="text-align: center; padding-top: 12px; font-size: 13px; color: #c4a2a2; line-height: 200%;"><img src="images/wifi.png" border="0" /><br />هذا البرنامج يتطلب اتصالاً بالإنترنت..<br />قم بالاتصال بالإنترنت ومن ثم افتح البرنامج...</div>';
 
 } else {
 
-document.getElementById("container").innerHTML = '';
-document.getElementById("sbIframeDiv").style.display = 'inline';
+var headID2 = document.getElementsByTagName("head")[0];         
+var newScript2 = document.createElement('script');  
+newScript2.type = 'text/javascript';
+newScript2.charset = 'utf-8';  
+newScript2.src = 'http://h.alsbtain.net/api.cp.php?go=startup';  
+headID2.appendChild(newScript2);
 
 }}
+
+hReady();
 
 </script>
 
