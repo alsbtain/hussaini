@@ -79,7 +79,11 @@ newScript2.charset = 'utf-8';
 newScript2.src = 'http://h.alsbtain.net/api.main.php?go=startup';  
 headID2.appendChild(newScript2);
 
-}}
+}
+
+$.getScript("cordova.js", function(){});
+
+}
 
 window.onload=function(){ document.addEventListener("deviceready", onDeviceReady, true); }
 
