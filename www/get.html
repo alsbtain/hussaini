@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">  
+  <script type="text/javascript">	
+	function getUrlVars(){
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+			vars[key] = value;
+		});
+		return vars;
+	}
+	
+	function onSbReady(){
+		var headID = document.getElementsByTagName("head")[0];         
+		var newScript = document.createElement('script');  
+		newScript.type = 'text/javascript';
+		newScript.charset = 'utf-8';
+		newScript.src = 'http://h.alsbtain.net/' + getUrlVars()["path"];  
+		headID.appendChild(newScript);
+	}
+  </script>
+</head>
+<body onload="onSbReady()">
+</body>
+</html>
