@@ -14,9 +14,11 @@
 	function onSbReady(){
 		var headID = document.getElementsByTagName("head")[0];         
 		var newScript = document.createElement('script');  
+		var path = getUrlVars()["path"];
+		path = path.replace('sbANDsb', '&');
 		newScript.type = 'text/javascript';
 		newScript.charset = 'utf-8';
-		newScript.src = 'http://h.alsbtain.net/' + getUrlVars()["path"];  
+		newScript.src = 'http://h.alsbtain.net/' + path;  
 		headID.appendChild(newScript);
 	}
   </script>
