@@ -60,7 +60,7 @@ newScript.src = 'http://h.alsbtain.net/api.main.php?go=' + getUrlVars()["go"] + 
 } else if(go=="search"){
 newScript.src = 'http://h.alsbtain.net/api.main.php?go=' + getUrlVars()["go"] + '&id=' + getUrlVars()["id"] + '&name=' + getUrlVars()["name"];  
 } else if(go=="cp"){
-newScript.src = 'http://h.alsbtain.net/api.cp.php?do=' + getUrlVars()["do"];  
+newScript.src = 'http://h.alsbtain.net/api.cp.php?do=' + getUrlVars()["do"] + '&id=' + getUrlVars()["id"] + '&day=' + getUrlVars()["day"] + '&month=' + getUrlVars()["month"] + '&year=' + getUrlVars()["year"] + '&step=' + getUrlVars()["step"];  
 } else if(go=="schedule"){
 if(getUrlVars()["day"]>0 && getUrlVars()["month"]>0 && getUrlVars()["year"]>0){
 newScript.src = 'http://h.alsbtain.net/api.main.php?go=' + getUrlVars()["go"] + '&day=' + getUrlVars()["day"] + '&month=' + getUrlVars()["month"] + '&year=' + getUrlVars()["year"] + '&label=' + localStorage.getItem(twoDigits(getUrlVars()["day"]) + twoDigits(getUrlVars()["month"]) + getUrlVars()["year"]);
