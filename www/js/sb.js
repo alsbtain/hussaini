@@ -74,6 +74,8 @@ headID.appendChild(newScript);
 
 navigator.geolocation.getCurrentPosition(onSuccess);
 
+}
+
 var onSuccess = function(position) {
     alert('Latitude: '          + position.coords.latitude          + '\n' +
           'Longitude: '         + position.coords.longitude         + '\n' +
@@ -84,8 +86,6 @@ var onSuccess = function(position) {
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');
 };
-
-}
 
 function twoDigits(name){
 var toReturn='';
