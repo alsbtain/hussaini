@@ -71,20 +71,11 @@ newScript.src = 'http://h.alsbtain.net/api.main.php?go=' + getUrlVars()["go"] + 
 }
 
 headID.appendChild(newScript);
-
-navigator.geolocation.getCurrentPosition(onSuccess);
-
 }
 
-var onSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-          'Longitude: '         + position.coords.longitude         + '\n' +
-          'Altitude: '          + position.coords.altitude          + '\n' +
-          'Accuracy: '          + position.coords.accuracy          + '\n' +
-          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          'Heading: '           + position.coords.heading           + '\n' +
-          'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
+var onGeoSuccess = function(position) {
+	document.getElementById("sbLatitude").value = position.coords.latitude;
+	document.getElementById("sbLongitude").value = position.coords.longitude;
 };
 
 function twoDigits(name){
