@@ -76,7 +76,12 @@ headID.appendChild(newScript);
 var onGeoSuccess = function(position) {
 	document.getElementById("sbLatitude").value = position.coords.latitude;
 	document.getElementById("sbLongitude").value = position.coords.longitude;
+	document.getElementById("geoMessage").innerHTML='<img src="images/tick.png" border="0" /> تم جلب البيانات بنجاح!';
 };
+
+function onGeoError(error) {
+	document.getElementById("geoMessage").innerHTML='<img src="images/cross.png" border="0" /> تعذر جلب البيانات!';
+}
 
 function twoDigits(name){
 var toReturn='';
