@@ -39,6 +39,7 @@
 	<gap:plugin name="nl.x-services.plugins.socialsharing" />
 	<gap:plugin name="de.appplant.cordova.plugin.local-notification" />
 	<gap:plugin name="com.phonegap.plugins.pushplugin" />
+	<gap:plugin name="fi.avaus.cordova.geolocation" />
 
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:density="ldpi" />
